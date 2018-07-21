@@ -13,8 +13,8 @@ import registerServiceWorker from './registerServiceWorker';
 const Routes = () => (
   <Router>
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-				<ul className="navbar-nav mr-auto">
+      <nav className="navbar navbar-expand-lg container">
+				<ul className="navbar-nav">
 					<li className="nav-item">
 						<Link className="nav-link" to="/">Home</Link>
 					</li>
@@ -35,7 +35,8 @@ const Home = () => (
 		<div className="jumbotron jumbotron-fluid">
 			<div className="container">
 				<h1>YouCare</h1>
-				<p>Give a helping hand to your neighborhood.</p>
+				<h2 className="h3 mb-2">Give a helping hand to your neighborhood.</h2>
+				<button type="button" class="btn btn-primary">Donate</button>
 			</div>
 		</div>
 		<Body></Body>

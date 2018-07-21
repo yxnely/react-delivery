@@ -4,25 +4,25 @@ const Body = () => {
 	return (
 		<div className="container">
 			<div className="row">
-				<div className="col-4">
+				<div className="col-sm">
 					<div>
-						<img src="/imgs/icons/heart.svg" alt="Heart icon" />
-						<h3>Spread your love</h3>
-						<p>This first thing</p>
+						<img src="/imgs/icons/heart.svg" alt="Heart icon" className="mb-3" />
+						<h3 className="mb-3 h4">Spread your love</h3>
+						<p>Id tempor nullam vivamus lobortis turpis ac condimentum porta vehicula, nisl fringilla velit. Id tempor nullam vivamus lobortis turpis ac condimentum porta vehicula, nisl fringilla velit.</p>
 					</div>
 				</div>
-  			<div className="col-4">
+  			<div className="col-sm">
 					<div>
-						<img src="/imgs/icons/unlock.svg" alt="Unlocked lock icon" />
-						<h3>Unlock the possibilities</h3>
-						<p>This first thing</p>
+						<img src="/imgs/icons/unlock.svg" alt="Unlocked lock icon" className="mb-3" />
+						<h3 className="mb-3 h4">Unlock the possibilities</h3>
+						<p>Id tempor nullam vivamus lobortis turpis ac condimentum porta vehicula, nisl fringilla velit. Id tempor nullam vivamus lobortis turpis ac condimentum porta vehicula, nisl fringilla velit.</p>
 					</div>
 				</div>
-				<div className="col-4">
+				<div className="col-sm">
 					<div>
-						<img src="/imgs/icons/award.svg" alt="Award icon" />
-						<h3>Reap the rewards</h3>
-						<p>This first thing</p>
+						<img src="/imgs/icons/award.svg" alt="Award icon" className="mb-3" />
+						<h3 className="mb-3 h4">Reap the rewards</h3>
+						<p>Id tempor nullam vivamus lobortis turpis ac condimentum porta vehicula, nisl fringilla velit. Id tempor nullam vivamus lobortis turpis ac condimentum porta vehicula, nisl fringilla velit.</p>
 					</div>
 				</div>
 			</div>
