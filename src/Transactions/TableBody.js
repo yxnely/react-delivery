@@ -54,6 +54,7 @@ class TableBody extends Component {
 					<tr key={item.id}>
 						<th scope="row">{item.order.date.toLocaleDateString('en-US')}</th>
 						<td>{item.order.id}</td>
+						<td>{item.order.name}</td>
 						<td>{item.order.location}</td>
 						<td>{item.order.amount.toLocaleString('USD')}</td>
 					</tr>
