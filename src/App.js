@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TransactionsList from './Transactions/List';
+import TransactionsList from './scripts/Transactions/List';
 
 class Transactions extends Component {
 	render() {
