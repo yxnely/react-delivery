@@ -8,6 +8,8 @@ import './index.css';
 
 import App from './App';
 import Body from './scripts/Home/Body';
+import CallToAction from './scripts/Home/Action';
+import Footer from './scripts/Home/Footer';
 import registerServiceWorker from './registerServiceWorker';
 
 const Routes = () => (
@@ -19,12 +21,16 @@ const Routes = () => (
 						<Link className="nav-link" to="/">Home</Link>
 					</li>
 					<li className="nav-item">
+						<Link className="nav-link" to="/donate">Donate</Link>
+					</li>
+					<li className="nav-item">
 						<Link className="nav-link" to="/transactions">Transactions</Link>
 					</li>
 				</ul>
       </nav>
 
       <Route exact path="/" component={Home} />
+			<Route path="/donate" component={Donate} />
       <Route path="/transactions" component={App} />
     </div>
   </Router>
@@ -34,15 +40,20 @@ const Home = () => (
 	<div>
 		<div className="jumbotron jumbotron-fluid">
 			<div className="container">
-				<h1>YouCare</h1>
-				<h2 className="h3 mb-2">Give a helping hand to your neighborhood.</h2>
-				<button type="button" class="btn btn-primary">Donate</button>
+				<h1>UCare</h1>
+				<p className="lead">Give a helping hand to your neighborhood.</p>
+				<button type="button" className="btn btn-primary">Donate</button>
 			</div>
 		</div>
 		<Body></Body>
+		<CallToAction></CallToAction>
+		<Footer></Footer>
 	</div>
 );
 
+const Donate = () => (
+	<div className="container"></div>
+);
 
 ReactDOM.render(<Routes />, document.getElementById('root'));
 registerServiceWorker();
