@@ -10,6 +10,8 @@ import App from './App';
 import Body from './scripts/Home/Body';
 import CallToAction from './scripts/Home/Action';
 import Footer from './scripts/Home/Footer';
+import Search from './scripts/Donate/Search';
+import Options from './scripts/Donate/quickOptions';
 import registerServiceWorker from './registerServiceWorker';
 
 const Routes = () => (
@@ -21,16 +23,13 @@ const Routes = () => (
 						<Link className="nav-link" to="/">Home</Link>
 					</li>
 					<li className="nav-item">
-						<Link className="nav-link" to="/donate">Donate</Link>
-					</li>
-					<li className="nav-item">
 						<Link className="nav-link" to="/transactions">Transactions</Link>
 					</li>
 				</ul>
       </nav>
 
       <Route exact path="/" component={Home} />
-			<Route path="/donate" component={Donate} />
+			<Route path="/donate/personalize" component={DonatePersonalized} />
       <Route path="/transactions" component={App} />
     </div>
   </Router>
@@ -51,8 +50,11 @@ const Home = () => (
 	</div>
 );
 
-const Donate = () => (
-	<div className="container"></div>
+const DonatePersonalized = () => (
+	<div className="container">
+		<Search></Search>
+		<Options></Options>
+	</div>
 );
 
 ReactDOM.render(<Routes />, document.getElementById('root'));
