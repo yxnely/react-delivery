@@ -8,6 +8,7 @@ class options extends React.Component {
     this.state = {
 			isChosen: false,
 			options: [],
+			list: [],
 		};
 		this.list = [];
 	}
@@ -43,24 +44,34 @@ class options extends React.Component {
 	addItem(item, callback, evt) {
 		this.list.push(item);
 
+		this.setState({ list: this.list })
+
 		Rqst.set('list', this.list);
 
 		callback(evt.target);
 	}
 
 	render() {
+		console.log(100, this.list);
 		return (
-			<div className="d-flex flex-wrap justify-content-between">
-				{this.state.options.map(opt => (
-					<button
-						onClick={e => this.handleClick(e)}
-						key={opt.id}
-						type="button"
-						value={opt.id}
-						className="col-md-2 btn btn-light mb-3 mr-2"
-					>{opt.name}
-					</button>
-				))}
+			<div>
+				<div className="d-flex flex-wrap justify-content-between">
+					{this.state.options.map(opt => (
+						<button
+							onClick={e => this.handleClick(e)}
+							key={opt.id}
+							type="button"
+							value={opt.id}
+							className="col-md-2 btn btn-light mb-3 mr-2"
+						>{opt.name}
+						</button>
+					))}
+				</div>
+				<ul className="list-group">
+					{this.list.map((item) => 
+						<li className="list-group-item" key={item.id}>{item.name}</li>
+					)}
+				</ul>
 			</div>
 		);
 	}
