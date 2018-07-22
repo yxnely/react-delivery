@@ -3,7 +3,9 @@ import React from 'react';
 class options extends React.Component {
 	constructor() {
     super();
-    this.state = {};
+    this.state = {
+			isChosen: false
+		};
     this.options = [
 			{
 				"id": 1,
@@ -81,15 +83,34 @@ class options extends React.Component {
 				"name": "Water",
 				"price": 1.99
 			}
-		]
+		];
+		this.list = [];
+	}
+
+	handleClick(evt) {
+		evt.preventDefault();
+		
+		const selectedItem = Number(evt.target.value);
+
+		this.addItem(this.options[selectedItem - 1]);
+
+	}
+
+	addItem(item) {
+		this.list.push(item);
 	}
 
 	render() {
 		return (
 			<div className="d-flex flex-wrap justify-content-between">
 				{this.options.map(opt => (
-					<button key={opt.id} type="button" className="col-md-2 btn btn-light mb-3 mr-2">
-						{opt.name}
+					<button
+						onClick={e => this.handleClick(e)}
+						key={opt.id}
+						type="button"
+						value={opt.id}
+						className="col-md-2 btn btn-light mb-3 mr-2"
+					>{opt.name}
 					</button>
 				))}
 			</div>
