@@ -1,4 +1,5 @@
 import React from 'react';
+import Rqst from '../Service/Request';
 
 class options extends React.Component {
 	constructor() {
@@ -92,12 +93,25 @@ class options extends React.Component {
 		
 		const selectedItem = Number(evt.target.value);
 
-		this.addItem(this.options[selectedItem - 1]);
-
+		this.addItem(this.options[selectedItem - 1], this.setBtn, evt);
 	}
 
-	addItem(item) {
+	setBtn(btn) {
+		if (btn.classList.contains('btn-light')) {
+			btn.classList.add('btn-success')
+			btn.classList.remove('btn-light')
+		} else {
+			btn.classList.add('btn-light')
+			btn.classList.remove('btn-success')
+		}
+	}
+
+	addItem(item, callback, evt) {
 		this.list.push(item);
+
+		Rqst.set('list', this.list);
+
+		callback(evt.target);
 	}
 
 	render() {
